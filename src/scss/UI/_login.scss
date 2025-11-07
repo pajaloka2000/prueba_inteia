@@ -1,0 +1,188 @@
+@use 'base/mixins' as m;
+@use 'base/variables' as v;
+
+// Estilos para el sistema de login
+body.login-page {
+    background: linear-gradient(135deg, lighten(v.$azul, 20%) 0%, v.$morado 100%);
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0;
+    font-family: v.$fuente_textos;
+}
+
+.login-container {
+    width: 100%;
+    max-width: 700px;
+    padding: 2rem;
+
+    @include m.telefono {
+        padding: 1rem;
+    }
+}
+
+.login-form {
+    background: v.$blanco;
+    padding: 3rem 2rem;
+    border-radius: 16px;
+    box-shadow: 0 20px 40px rgba(0,0,0,0.1);
+
+    @include m.telefono {
+        padding: 2rem 1.5rem;
+    }
+}
+
+.login-header {
+    text-align: center;
+    margin-bottom: 2rem;
+
+    h1 {
+        color: v.$azul;
+        margin-bottom: 0.5rem;
+        font-size: 1.8rem;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 0.5rem;
+        font-family: v.$fuente_headings;
+
+        @include m.telefono {
+            font-size: 2rem;
+        }
+    }
+
+    p {
+        color: v.$gris;
+        margin: 0;
+        font-family: v.$fuente_textos;
+    }
+}
+
+.formulario-login {
+    margin-bottom: 2rem;
+}
+
+// Campos del login
+.campo {
+    margin-bottom: 1.5rem;
+
+    label {
+        display: flex;
+        align-items: center;
+        gap: 0.5rem;
+        margin-bottom: 0.5rem;
+        font-weight: 600;
+        color: v.$grisOscuro;
+        font-family: v.$fuente_headings;
+
+        i {
+            color: v.$azul;
+        }
+    }
+
+    input {
+        width: 100%;
+        padding: 0.875rem;
+        border: 2px solid #e5e7eb;
+        border-radius: 8px;
+        font-size: 1.5rem;
+        transition: all 0.2s;
+        box-sizing: border-box;
+        font-family: v.$fuente_textos;
+
+        &:focus {
+            outline: none;
+            border-color: v.$azul;
+            box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.1);
+        }
+
+        &::placeholder {
+            color: v.$gris;
+        }
+    }
+}
+
+// Botón de login
+.boton-login {
+    width: 100%;
+    padding: 1rem;
+    background: linear-gradient(135deg, v.$azul, darken(v.$azul, 10%));
+    color: v.$blanco;
+    border: none;
+    border-radius: 8px;
+    font-size: 1.5rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.2s;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+    font-family: v.$fuente_headings;
+
+    &:hover {
+        background: linear-gradient(135deg, darken(v.$azul, 5%), darken(v.$azul, 15%));
+        transform: translateY(-1px);
+        box-shadow: 0 4px 12px rgba(37, 99, 235, 0.3);
+    }
+}
+
+// Alertas del login
+.alerta {
+    padding: 1rem;
+    border-radius: 8px;
+    margin-bottom: 1rem;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    font-family: v.$fuente_textos;
+
+    p {
+        margin: 0;
+        display: flex;
+        align-items: center;
+        gap: 0.5rem;
+    }
+
+    &-error {
+        background-color: lighten(v.$rojo, 40%);
+        border: 1px solid lighten(v.$rojo, 20%);
+        color: v.$rojo;
+    }
+}
+
+// Footer del login
+.login-footer {
+    background-color: #f8fafc;
+    padding: 1rem;
+    border-radius: 8px;
+    text-align: center;
+    font-size: 0.875rem;
+    color: v.$gris;
+    font-family: v.$fuente_textos;
+
+    p {
+        margin: 0 0 0.5rem 0;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 0.5rem;
+    }
+}
+
+.datos-prueba {
+    margin-top: 0.5rem;
+    padding: 0.5rem;
+    background-color: #e5e7eb;
+    border-radius: 4px;
+    text-align: left;
+    font-family: 'Courier New', monospace;
+    font-size: 1.4rem;
+    line-height: 1.4;
+    color: v.$grisOscuro;
+
+    strong {
+        color: v.$azul;
+    }
+}
